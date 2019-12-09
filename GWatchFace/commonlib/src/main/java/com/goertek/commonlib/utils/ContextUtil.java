@@ -23,6 +23,8 @@ public class ContextUtil {
         return  sContextRef.get();
     }
 
+    //Device protected storage:新的存储类型，只要设备是启动后，随时可以访问存在在这里的数据，包括Direct boot模式时
+    //要访问Device protected storage，需要在使用所有文件相关的API时，用以下的Context,
     @RequiresApi(api = Build.VERSION_CODES.N)
     public static Context getDirectBootContext() {
         return ( sContextRef.get()).createDeviceProtectedStorageContext();
