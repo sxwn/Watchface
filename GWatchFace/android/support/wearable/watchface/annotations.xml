@@ -1,0 +1,5 @@
+<root>
+    <item name='android.support.wearable.watchface.WatchFaceService'>
+        <annotation name='java.lang.Deprecated' />
+    </item>
+</root>

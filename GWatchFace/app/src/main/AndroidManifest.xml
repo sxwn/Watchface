@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.goertek.watchface">
+    <!-- Required to act as a custom watch face. -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Required for complications to receive complication data and open the provider chooser. -->
+    <uses-permission android:name="com.google.android.wearable.permission.RECEIVE_COMPLICATION_DATA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature
+        android:name="android.hardware.type.watch"
+        android:required="true" />
+    <application
+        android:name=".GWatchFaceApp"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@android:style/Theme.DeviceDefault">
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <service
+            android:label="colorwatchface"
+            android:name=".goerwatchface.ColorWatchFaceService"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/preview_color"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/preview_color"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.goertek.watchface.color.CONFIG_CUSTOMIZE"/>
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"></category>
+            </intent-filter>
+        </service>
+        <service
+            android:label="金色年华"
+            android:name=".goerwatchface.BusinessGoldenWatchFaceService"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/preview_businessgolden"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/preview_businessgolden"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.goertek.watchface.businessgolden.CONFIG_CUSTOMIZE"/>
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
+            </intent-filter>
+        </service>
+        <service
+            android:label="经典"
+            android:name=".goerwatchface.ClassicWatchFaceService"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/preview_classic"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/preview_classic"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.goertek.watchface.classic.CONFIG_CUSTOMIZE"/>
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"/>
+            </intent-filter>
+        </service>
+        <service
+            android:label="铭刻"
+            android:name=".goerwatchface.EngravedWatchFaceService"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/preview_engraved"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/preview_engraved"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.goertek.watchface.engraved.CONFIG_CUSTOMIZE"/>
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"></category>
+            </intent-filter>
+        </service>
+        <service
+            android:label="简炫"
+            android:name=".goerwatchface.BusinessWatchFaceService"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/watch_face"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview"
+                android:resource="@drawable/preview_business"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.preview_circular"
+                android:resource="@drawable/preview_business"/>
+            <meta-data
+                android:name="com.google.android.wearable.watchface.wearableConfigurationAction"
+                android:value="com.goertek.watchface.business.CONFIG_CUSTOMIZE"/>
+
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService"/>
+                <category android:name="com.google.android.wearable.watchface.category.WATCH_FACE"></category>
+            </intent-filter>
+        </service>
+        <activity android:name=".goerwatchface.ColorWatchFaceCustomActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.color.CONFIG_CUSTOMIZE" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".goerwatchface.ClassicWatchFaceCustomActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.classic.CONFIG_CUSTOMIZE" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".goerwatchface.BusinessWatchFaceCustomActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.business.CONFIG_CUSTOMIZE" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".goerwatchface.BusinessGoldenCustomActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.businessgolden.CONFIG_CUSTOMIZE" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".goerwatchface.EngravedWatchFaceCustomActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.engraved.CONFIG_CUSTOMIZE" />
+
+                <category android:name="com.google.android.wearable.watchface.category.WEARABLE_CONFIGURATION" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name="com.goertek.commonlib.custom.BaseWidgetOptionListActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.WIDGETOPTIONLIST" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".dataprovider.worldtime.WorldTimeActivity">
+            <intent-filter>
+                <action android:name="com.goertek.watchface.WORLDTIMESETTING"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

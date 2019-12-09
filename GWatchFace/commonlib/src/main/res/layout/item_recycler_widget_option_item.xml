@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_widget_option_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="8.0dip"
+    android:paddingBottom="8.0dip">
+
+    <ImageView
+        android:id="@+id/iv_widget_option_item_icon"
+        android:layout_width="48.0dip"
+        android:layout_height="48.0dip"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="32.0dip"
+        android:layout_marginLeft="32.0dip" />
+
+    <TextView
+        android:id="@+id/tv_widget_option_item_content"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="15.0dip"
+        android:layout_toEndOf="@id/iv_widget_option_item_icon"
+        android:breakStrategy="simple"
+        android:textColor="@color/white"
+        android:textSize="17.5sp"
+        android:layout_marginLeft="15.0dip"
+        android:layout_toRightOf="@id/iv_widget_option_item_icon" />
+
+    <ImageView
+        android:id="@+id/iv_widget_option_item_select"
+        android:layout_width="24.0dip"
+        android:layout_height="24.0dip"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="32.0dip"
+        android:visibility="invisible"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="32.0dip" />
+</RelativeLayout>

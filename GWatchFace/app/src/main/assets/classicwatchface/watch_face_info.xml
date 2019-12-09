@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  ~ Copyright (c) Huawei Technologies Co., Ltd. 2019-2019. All rights reserved.
+  -->
+
+<HwTheme>
+    <title>English Name</title>
+    <title-cn>主题中文名称</title-cn>
+    <author>制作者名称</author>
+    <designer>设计师名称</designer>
+    <screen>FHD</screen>
+    <version>9.0.1</version>
+    <font>Default</font>
+    <font-cn>默认</font-cn>
+    <briefinfo></briefinfo>
+</HwTheme>
